@@ -1,5 +1,5 @@
 {
-  "name": "sweet",
+  "name": "test-sweet",
   "version": "1.0.0",
   "description": "A sweet test suite for javascript",
   "main": "test-sweet.js",
