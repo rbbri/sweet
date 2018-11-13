@@ -1,4 +1,4 @@
-var chalk = require('chalk')
+const chalk = require('chalk')
 
 const matchers = (expression) => ({
   toEqual: function(assertion) {
