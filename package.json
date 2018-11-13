@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/rbbri/sweet#readme",
   "dependencies": {
-    "chalk": "^2.4.1"
+    "chalk": "^2.4.1",
+    "shelljs": "^0.8.3"
   }
 }

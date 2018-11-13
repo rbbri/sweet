@@ -1,11 +1,5 @@
 #!/usr/bin/env node
 
-function execute(command) {
-  const exec = require('child_process').exec
+var shell = require("shelljs")
 
-  exec(command, (err, stdout, stderr) => {
-    process.stdout.write(stdout)
-  })
-}
-
-execute('node spec/*_spec.js')
+shell.exec("node spec/*_spec.js")
