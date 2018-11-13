@@ -1,0 +1,27 @@
+var chalk = require('chalk')
+
+const matchers = (expression) => ({
+  toEqual: function(assertion) {
+    if (expression !== assertion) {
+      console.log(chalk.red("🌚 " + expression + " isn't " + assertion))
+  } else {
+      console.log(chalk.green('🍬 as'))
+  }
+  }
+  })
+
+const expect = (expression) => matchers(expression)
+
+const method = (name, expectations) => {
+  console.log(name)
+  expectations()
+  }
+
+const it = (can, doThis) => method(chalk.bold(can + '？'), doThis)
+
+module.exports = {
+  method,
+  it,
+  expect,
+  matchers
+}
