@@ -1,6 +1,6 @@
 {
   "name": "test-sweet",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A sweet test suite for javascript",
   "main": "test-sweet.js",
   "scripts": {
@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/rbbri/sweet/issues"
   },
-  "homepage": "https://github.com/rbbri/sweet#readme"
+  "homepage": "https://github.com/rbbri/sweet#readme",
+  "dependencies": {
+    "chalk": "^2.4.1"
+  }
 }
