@@ -4,7 +4,7 @@
   "description": "A sweet test suite for javascript",
   "main": "test-sweet.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node spec/*_spec.js"
   },
   "repository": {
     "type": "git",
