@@ -1,0 +1,24 @@
+{
+  "name": "sweet",
+  "version": "1.0.0",
+  "description": "A sweet test suite for javascript",
+  "main": "test-sweet.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/rbbri/sweet.git"
+  },
+  "keywords": [
+    "Test",
+    "Sweet",
+    "Javascript"
+  ],
+  "author": "rbbri, runticle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rbbri/sweet/issues"
+  },
+  "homepage": "https://github.com/rbbri/sweet#readme"
+}
