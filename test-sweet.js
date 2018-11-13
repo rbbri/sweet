@@ -4,9 +4,11 @@ const matchers = (expression) => ({
   toEqual: function(assertion) {
     if (expression !== assertion) {
       console.log(chalk.red("🌚 " + expression + " isn't " + assertion))
-  } else {
+      return false
+    } else {
       console.log(chalk.green('🍬 as'))
-  }
+      return true
+    }
   }
   })
 
