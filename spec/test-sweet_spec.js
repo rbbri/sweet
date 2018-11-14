@@ -48,4 +48,11 @@ represent('matchers', () => {
       expect(output).toEqual(true)
     })
   })
+  method('isInstanceOf', () => {
+    it('should work', () => {
+      var expression = new Date()
+      output = matchers(expression).isInstanceOf(Date)
+      expect(output).toEqual(true)
+    })
+  })
 })
