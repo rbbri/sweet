@@ -1,5 +1,6 @@
 const {
   method,
+  represent,
   it,
   expect,
   matchers
@@ -12,6 +13,13 @@ method('method', () => {
   it('executes a callback function', () => {
     const output= method('', noop)
     expect(executes).toEqual(1)
+  })
+})
+
+method('represent', () => {
+  it('executes a callback function', () => {
+    const output= represent('', noop)
+    expect(executes).toEqual(2)
   })
 })
 
@@ -32,7 +40,7 @@ method('matchers', () => {
   })
 })
 
-method('matchers', () => {
+represent('matchers', () => {
   method('toInclude', () => {
     it('should work for arrays', () => {
       output = matchers([1,2,3,4]).toInclude(1)
