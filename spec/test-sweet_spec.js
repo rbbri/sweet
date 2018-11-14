@@ -31,16 +31,13 @@ method('expect', () => {
   })
 })
 
-method('matchers', () => {
+represent('matchers', () => {
   method('toEqual', () => {
     it('should be true when true', () => {
       output = matchers(1).toEqual(1)
       expect(output).toEqual(true)
     })
   })
-})
-
-represent('matchers', () => {
   method('toInclude', () => {
     it('should work for arrays', () => {
       output = matchers([1,2,3,4]).toInclude(1)
