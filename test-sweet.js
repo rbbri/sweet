@@ -1,37 +1,42 @@
 const chalk = require('chalk')
-var passedTests = []
+const fs = require('fs')
 
 const matchers = (expression) => ({
   toEqual: function(assertion) {
     if (expression !== assertion) {
       console.log(chalk.red("🌚 " + expression + " isn't " + assertion))
-      passedTests.push('🌚')
+      sweetieBar('🌚')
       return false
     } else {
-      passedTests.push('🍬')
+      sweetieBar('🍬')
       return true
     }
   },
   toInclude: function(assertion) {
     if (!expression.includes(assertion)) {
       console.log(chalk.red("🌚 " + expression + " does not include " + assertion))
+      sweetieBar('🌚')
       return false
     } else {
-      passedTests.push('🍬')
+      sweetieBar('🍬')
       return true
     }
   },
   isInstanceOf: function(assertion) {
     if (!(expression instanceof assertion)) {
       console.log(chalk.red("🌚 " + expression + " is not an instance of " + assertion))
+      sweetieBar('🌚')
       return false
     } else {
-      passedTests.push('🍬')
+      sweetieBar('🍬')
       return true
     }
   }
   })
 
+var sweetieBar = function(result) {
+  fs.appendFile('./sweets.txt', result + ' ', function(){})
+}
 
 const expect = (expression) => matchers(expression)
 
@@ -48,7 +53,6 @@ const represent = (name, expectations) => {
 const it = (can, doThis) => method(chalk.bold(can + '？'), doThis)
 
 module.exports = {
-  passedTests,
   method,
   represent,
   it,
