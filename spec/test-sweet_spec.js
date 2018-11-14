@@ -27,7 +27,19 @@ method('matchers', () => {
   method('toEqual', () => {
     it('should be true when true', () => {
       output = matchers(1).toEqual(1)
-      console.log(output)
+      expect(output).toEqual(true)
+    })
+  })
+})
+
+method('matchers', () => {
+  method('toInclude', () => {
+    it('should work for arrays', () => {
+      output = matchers([1,2,3,4]).toInclude(1)
+      expect(output).toEqual(true)
+    })
+    it('should work for strings', () => {
+      output = matchers("I am a string").toInclude("string")
       expect(output).toEqual(true)
     })
   })

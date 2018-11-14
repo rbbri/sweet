@@ -9,6 +9,15 @@ const matchers = (expression) => ({
       console.log(chalk.green('🍬 as'))
       return true
     }
+  },
+  toInclude: function(assertion) {
+    if (!expression.includes(assertion)) {
+      console.log(chalk.red("🌚 " + assertion + " does not include " + expression))
+      return false
+    } else {
+      console.log(chalk.green('🍬 as'))
+      return true
+    }
   }
   })
 
