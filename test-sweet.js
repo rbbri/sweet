@@ -18,6 +18,15 @@ const matchers = (expression) => ({
       console.log(chalk.green('🍬 as'))
       return true
     }
+  },
+  isInstanceOf: function(assertion) {
+    if (!(expression instanceof assertion)) {
+      console.log(chalk.red("🌚 " + expression + " is not an instance of " + assertion))
+      return false
+    } else {
+      console.log(chalk.green('🍬 as'))
+      return true
+    }
   }
   })
 
