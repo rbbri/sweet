@@ -12,7 +12,7 @@ const matchers = (expression) => ({
   },
   toInclude: function(assertion) {
     if (!expression.includes(assertion)) {
-      console.log(chalk.red("🌚 " + assertion + " does not include " + expression))
+      console.log(chalk.red("🌚 " + expression + " does not include " + assertion))
       return false
     } else {
       console.log(chalk.green('🍬 as'))
@@ -28,10 +28,16 @@ const method = (name, expectations) => {
   expectations()
   }
 
+const represent = (name, expectations) => {
+  console.log(name)
+  expectations()
+  }
+
 const it = (can, doThis) => method(chalk.bold(can + '？'), doThis)
 
 module.exports = {
   method,
+  represent,
   it,
   expect,
   matchers
