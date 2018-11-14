@@ -18,7 +18,7 @@
   "author": "rbbri, runticle",
   "license": "ISC",
   "bin": {
-    "sweet": "./cli.js"
+    "sweet": "./bin/cli.js"
   },
   "bugs": {
     "url": "https://github.com/rbbri/sweet/issues"
