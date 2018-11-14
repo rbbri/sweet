@@ -1,6 +1,6 @@
 {
   "name": "test-sweet",
-  "version": "2.0.6",
+  "version": "2.0.5",
   "description": "A sweet test suite for javascript",
   "main": "test-sweet.js",
   "scripts": {
@@ -18,7 +18,7 @@
   "author": "rbbri, runticle",
   "license": "ISC",
   "bin": {
-    "sweet": "./bin/cli.js"
+    "sweet": "cli.js"
   },
   "bugs": {
     "url": "https://github.com/rbbri/sweet/issues"
