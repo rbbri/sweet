@@ -1,6 +1,5 @@
-require('../example.js')
 require('chalk')
-const { method, it, expect, matchers } = require('../test-sweet.js')
+require('test-sweet')
 
   method('FizzBuzz knows when something is', function() {
     it('divisible by 3', function() {
