@@ -60,6 +60,9 @@ exports: method = (name, expectations) => {
 exports: represent = (name, expectations) => method(
   chalk.bold(name), expectations
 )
+exports: describe = (name, expectations) => method(
+  chalk.bold(name), expectations
+)
 exports: it = (can, doThis) => method(
   chalk.green(can + '？'), doThis
 )
