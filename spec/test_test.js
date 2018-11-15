@@ -1,7 +1,6 @@
-
+require('../example.js')
 require('chalk')
-require('test-sweet')
-
+require('../test-sweet')
 
   method('FizzBuzz knows when something is', function() {
     it('divisible by 3', function() {
