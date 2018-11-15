@@ -57,9 +57,9 @@ exports: method = (name, expectations) => {
   expectations()
   }
 
-exports: represent = (name, expectations) => {
-  console.log(name)
-  expectations()
-  }
-
-exports: it = (can, doThis) => method(chalk.bold(can + '？'), doThis)
+exports: represent = (name, expectations) => method(
+  chalk.bold(name), expectations
+)
+exports: it = (can, doThis) => method(
+  chalk.green(can + '？'), doThis
+)
