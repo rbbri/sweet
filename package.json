@@ -20,6 +20,7 @@
   "bin": {
     "sweet": "cli.js"
   },
+  "preferGlobal": true,
   "bugs": {
     "url": "https://github.com/rbbri/sweet/issues"
   },
@@ -28,5 +29,8 @@
     "chalk": "^2.4.1",
     "fs": "0.0.1-security",
     "shelljs": "^0.8.3"
-  }
+  },
+  "devDependencies": {
+  "sweet": "cli.js"
+}
 }
