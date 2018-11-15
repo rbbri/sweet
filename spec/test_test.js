@@ -1,5 +1,7 @@
+
 require('chalk')
 require('test-sweet')
+
 
   method('FizzBuzz knows when something is', function() {
     it('divisible by 3', function() {

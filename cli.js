@@ -3,16 +3,13 @@
 const shell = require("shelljs")
 const fs = require('fs');
 const chalk = require('chalk');
-const testFolders = ["./spec/", "./test/"]
+const testFolder = "./spec/"
 
-
-for(i = 0; i < testFolders.length; i++) {
-  fs.readdirSync(testFolders[i]).forEach(file => {
+  fs.readdirSync(testFolder).forEach(file => {
     if (file.includes("_spec") || file.includes("_test")) {
-      shell.exec("node " + testFolders[i] + file + " --color=true")
+      shell.exec("node " + testFolder + file + " --color=true")
     }
   })
-}
 
 var sweetieBar = fs.readFileSync('sweets.txt', 'utf8')
 sweetieBarArray = sweetieBar.split(' ')
