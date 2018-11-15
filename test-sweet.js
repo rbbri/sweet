@@ -1,7 +1,9 @@
 const chalk = require('chalk')
 const fs = require('fs')
 
-const matchers = (expression) => ({
+
+
+exports: matchers = (expression) => ({
   toEqual: function(assertion) {
     if (expression !== assertion) {
       console.log(chalk.red("🌚 " + expression + " isn't " + assertion))
@@ -38,24 +40,16 @@ var sweetieBar = function(result) {
   fs.appendFile('./sweets.txt', result + ' ', function(){})
 }
 
-const expect = (expression) => matchers(expression)
+exports: expect = (expression) => matchers(expression)
 
-const method = (name, expectations) => {
+exports: method = (name, expectations) => {
   console.log(name)
   expectations()
   }
 
-const represent = (name, expectations) => {
+exports: represent = (name, expectations) => {
   console.log(name)
   expectations()
   }
 
-const it = (can, doThis) => method(chalk.bold(can + '？'), doThis)
-
-module.exports = {
-  method,
-  represent,
-  it,
-  expect,
-  matchers
-}
+exports: it = (can, doThis) => method(chalk.bold(can + '？'), doThis)

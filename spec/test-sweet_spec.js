@@ -1,10 +1,4 @@
-const {
-  method,
-  represent,
-  it,
-  expect,
-  matchers
-} = require('../test-sweet')
+require('test-sweet')
 
 let executes = 0
 const noop = () => { executes += 1 }
