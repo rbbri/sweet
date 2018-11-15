@@ -20,7 +20,7 @@
   "bin": {
     "sweet": "cli.js"
   },
-  "preferGlobal": true,
+  "preferGlobal": "true",
   "bugs": {
     "url": "https://github.com/rbbri/sweet/issues"
   },
