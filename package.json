@@ -1,6 +1,6 @@
 {
   "name": "test-sweet",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A sweet test suite for javascript",
   "main": "test-sweet.js",
   "scripts": {
