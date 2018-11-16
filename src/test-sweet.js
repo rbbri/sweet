@@ -1,7 +1,36 @@
 const chalk = require('chalk')
 const fs = require('fs')
+const glob = require('glob')
 
+SweetSuite = function () {
 
+  const fail = function(expression, assertion) {
+    sweetieBar('🌚')
+    console.log(chalk.red('In: ' + __filename))
+    return false
+  }
+
+  const pass = function() {
+    sweetieBar('🍬')
+    return true
+  }
+
+  var sweetieBar = function(result) {
+    fs.appendFile('./bin/sweets.txt', result + ' ', function(){})
+  }
+
+  var testLog = function(test) {
+    let test_data = JSON.stringify(test, null, 2);
+    fs.appendFileSync('./bin/wrappers.json', test_data)
+  }
+
+  exports: mock = (object) => ({
+    with: function(call) {
+      return call
+    }
+  })
+
+exports: stub = (object) => mock(object)
 
 exports: matchers = (expression) => ({
   toEqual: function(assertion) {
@@ -9,7 +38,7 @@ exports: matchers = (expression) => ({
       console.trace(
         chalk.red("🌚 " + expression + " isn't " + assertion)
       )
-      return fail()
+      return fail(expression, assertion)
     } else {
       return pass()
     }
@@ -19,7 +48,7 @@ exports: matchers = (expression) => ({
       console.trace(
         chalk.red("🌚 " + expression + " does not include " + assertion)
       )
-      return fail()
+      return fail(expression, assertion)
     } else {
       return pass()
     }
@@ -29,31 +58,18 @@ exports: matchers = (expression) => ({
       console.trace(
         chalk.red("🌚 " + expression + " is not an instance of " + assertion)
       )
-      return fail()
+      return fail(expression, assertion)
     } else {
       return pass()
     }
   }
   })
 
-const fail = function() {
-  sweetieBar('🌚')
-  return false
-}
-
-const pass = function() {
-  sweetieBar('🍬')
-  return true
-}
-
-var sweetieBar = function(result) {
-  fs.appendFile('./sweets.txt', result + ' ', function(){})
-}
-
 exports: expect = (expression) => matchers(expression)
 
+exports: allow = (expression) => matchers(expression)
+
 exports: method = (name, expectations) => {
-  console.log(name)
   expectations()
   }
 
@@ -63,6 +79,11 @@ exports: represent = (name, expectations) => method(
 exports: describe = (name, expectations) => method(
   chalk.bold(name), expectations
 )
-exports: it = (can, doThis) => method(
-  chalk.green(can + '？'), doThis
-)
+
+exports: it = (can, doThis) => {
+  testLog(can, doThis)
+  doThis()
+}
+
+}
+new SweetSuite()

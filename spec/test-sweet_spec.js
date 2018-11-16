@@ -1,4 +1,5 @@
-require('../test-sweet')
+require('../src/test-sweet.js')
+// require('test-sweet')
 
 let executes = 0
 const noop = () => { executes += 1 }
@@ -22,6 +23,17 @@ method('expect', () => {
     const output= expect(true)
     expect(typeof output).toEqual("object")
     expect(typeof output.toEqual).toEqual("function")
+  })
+})
+
+let calls = 0
+const count = () => { calls += 1 }
+
+method('stub', () => {
+  it('stubs an object and replaces it with a callback', () => {
+    stub = stub(count).with("Today")
+    expect(stub).toEqual("Today")
+    expect(count).toEqual(0)
   })
 })
 
