@@ -49,4 +49,16 @@ represent('matchers', () => {
       expect(output).toEqual(true)
     })
   })
+  method('toBeLessThan', () => {
+    it('should work', () => {
+      output = matchers(3).toBeLessThan(5)
+      expect(output).toEqual(true)
+    })
+  })
+  method('toBeGreaterThan', () => {
+    it('should work', () => {
+      output = matchers(3).toBeGreaterThan(1)
+      expect(output).toEqual(true)
+    })
+  })
 })

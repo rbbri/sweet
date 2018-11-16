@@ -33,6 +33,26 @@ exports: matchers = (expression) => ({
     } else {
       return pass()
     }
+  },
+  toBeGreaterThan: function(assertion) {
+    if(!(expression > assertion)) {
+      console.trace(
+        chalk.red("🌚 " + expression + " is not greater than " + assertion)
+      )
+      return fail()
+    } else {
+      return pass()
+    }
+  },
+  toBeLessThan: function(assertion) {
+    if(!(expression < assertion)) {
+      console.trace(
+        chalk.red("🌚 " + expression + " is not less than " + assertion)
+      )
+      return fail()
+    } else {
+      return pass()
+    }
   }
   })
 
