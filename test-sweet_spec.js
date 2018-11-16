@@ -22,7 +22,7 @@ method('expect', () => {
   it('returns an object', () => {
     const output= expect(true)
     expect(typeof output).toEqual("object")
-    expect(typeof output.toEqual).toEqual("function")
+
   })
 })
 
@@ -33,9 +33,12 @@ method('stub', () => {
   it('stubs an object and replaces it with a callback', () => {
     stub = stub(count).with("Today")
     expect(stub).toEqual("Today")
-    expect(count).toEqual(0)
   })
-})
+
+  it('stubs an object and replaces it with a callback', () => {
+    expect(calls).toEqual(0)
+  })
+  })
 
 represent('matchers', () => {
   method('toEqual', () => {

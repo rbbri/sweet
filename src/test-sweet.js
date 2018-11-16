@@ -20,8 +20,7 @@ SweetSuite = function () {
   }
 
   var testLog = function(test) {
-    let test_data = JSON.stringify(test, null, 2);
-    fs.appendFileSync('./bin/wrappers.json', test_data)
+    fs.appendFile('./bin/wrappers.txt', test + '🍠', function(){} )
   }
 
   exports: mock = (object) => ({
