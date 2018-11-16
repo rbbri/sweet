@@ -1,6 +1,5 @@
 const chalk = require('chalk')
 const fs = require('fs')
-const glob = require('glob')
 
 SweetSuite = function () {
 
@@ -37,7 +36,7 @@ exports: matchers = (expression) => ({
       console.trace(
         chalk.red("🌚 " + expression + " isn't " + assertion)
       )
-      return fail(expression, assertion)
+      return fail()
     } else {
       return pass()
     }
@@ -47,7 +46,7 @@ exports: matchers = (expression) => ({
       console.trace(
         chalk.red("🌚 " + expression + " does not include " + assertion)
       )
-      return fail(expression, assertion)
+      return fail()
     } else {
       return pass()
     }
@@ -57,7 +56,27 @@ exports: matchers = (expression) => ({
       console.trace(
         chalk.red("🌚 " + expression + " is not an instance of " + assertion)
       )
-      return fail(expression, assertion)
+      return fail()
+    } else {
+      return pass()
+    }
+  },
+  toBeGreaterThan: function(assertion) {
+    if(!(expression > assertion)) {
+      console.trace(
+        chalk.red("🌚 " + expression + " is not greater than " + assertion)
+      )
+      return fail()
+    } else {
+      return pass()
+    }
+  },
+  toBeLessThan: function(assertion) {
+    if(!(expression < assertion)) {
+      console.trace(
+        chalk.red("🌚 " + expression + " is not less than " + assertion)
+      )
+      return fail()
     } else {
       return pass()
     }

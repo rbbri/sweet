@@ -1,4 +1,4 @@
-require('../src/test-sweet.js')
+require('../test-sweet.js')
 // require('test-sweet')
 
 let executes = 0
