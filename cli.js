@@ -8,11 +8,11 @@ const chalk = require('chalk')
 const testFolder = "./spec/"
 
 let clean = function() {
-if (fs.existsSync('./bin/sweets.txt')) {
-  fs.unlinkSync('./bin/sweets.txt')
+if (fs.existsSync('sweets.txt')) {
+  fs.unlinkSync('sweets.txt')
 }
-if (fs.existsSync('./bin/wrappers.txt')) {
-  fs.unlinkSync('./bin/wrappers.txt')
+if (fs.existsSync('wrappers.txt')) {
+  fs.unlinkSync('wrappers.txt')
 }
 }
 
@@ -24,8 +24,8 @@ var runTests = function() { fs.readdirSync(testFolder).forEach(fileName => {
 }
 
 var logResults = function() {
-  var sweetieBar = fs.readFileSync('bin/sweets.txt', 'utf8')
-  var wrapper = fs.readFileSync('bin/wrappers.txt', 'utf8')
+  var sweetieBar = fs.readFileSync('sweets.txt', 'utf8')
+  var wrapper = fs.readFileSync('wrappers.txt', 'utf8')
   sweetieBarArray = sweetieBar.split(' ')
   wrapperArray = wrapper.split('🍠')
   var passed = 0

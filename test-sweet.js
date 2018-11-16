@@ -15,11 +15,11 @@ SweetSuite = function () {
   }
 
   var sweetieBar = function(result) {
-    fs.appendFile('./bin/sweets.txt', result + ' ', function(){})
+    fs.appendFile('sweets.txt', result + ' ', function(){})
   }
 
   var testLog = function(test) {
-    fs.appendFile('./bin/wrappers.txt', test + '🍠', function(){} )
+    fs.appendFile('wrappers.txt', test + '🍠', function(){} )
   }
 
   exports: mock = (object) => ({
