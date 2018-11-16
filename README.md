@@ -26,7 +26,7 @@ To run tests in the terminal run:
 sweet
 ```
 
-## Descriptors
+## Descriptors
 ```
 represent
 describe
@@ -48,6 +48,10 @@ toBeGreaterThan
 toBeLessThan
 isInstanceOf
 ```
+
+## Example usage
+
+[![asciicast](https://asciinema.org/a/AUKrj5QBMTibcgUw4HRFqIXAA.svg)](https://asciinema.org/a/AUKrj5QBMTibcgUw4HRFqIXAA)
 
 ## Contributors
 <img src="https://avatars2.githubusercontent.com/u/40716695?s=400&u=2995577c59d4e99096a74613d629e89bff104cee&v=4" width="50px;"/> Alfie Freeman </img>
