@@ -1,3 +1,5 @@
+[![Waffle.io - Columns and their card count](https://badge.waffle.io/rbbri/sweet.svg?columns=all)](https://waffle.io/rbbri/sweet)
+
 # Sweet Test Framework
 
 This is a sweet as javascript test framework.
